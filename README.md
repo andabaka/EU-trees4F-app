@@ -33,16 +33,16 @@ Install the required R packages:
 
 ```{r}
 install.packages(c(
-  "shiny", 
-  "leaflet", 
-  "raster", 
-  "terra", 
-  "dplyr", 
-  "sf", 
-  "rnaturalearth", 
-  "rnaturalearthdata", 
-  "leaflet.extras", 
-  "units", 
+  "shiny",
+  "leaflet",
+  "raster",
+  "terra",
+  "dplyr",
+  "sf",
+  "rnaturalearth",
+  "rnaturalearthdata",
+  "leaflet.extras",
+  "units",
   "shinyjs"
 ))
 ```
@@ -55,7 +55,7 @@ install.packages(c(
 **Download Options:**
 
 - **Complete Dataset** (~2 GB) - All layers: [EU-Trees4F_dataset.zip](link)
-- **SDM Ensemble Mean** (~130 MB) - **Recommended**: [EU-Trees4F_ens-sdms.zip](link) 
+- **SDM Ensemble Mean** (~130 MB) - **Recommended**: [EU-Trees4F_ens-sdms.zip](link)
 - **Climatic Ensemble** (~70 MB): [EU-Trees4F_ens-clim.zip](link)
 - **Single Models** (~1.2 GB): [EU-Trees4F_single-models.zip](link)
 - **PNG Images** (~500 MB): [EU-Trees4F_pngs.zip](link)
@@ -69,7 +69,7 @@ install.packages(c(
 ### Data Setup Instructions
 
 **Option A: Download complete SDM ensemble** (~130 MB)
-1. Download **EU-Trees4F_ens-sdms.zip** 
+1. Download **EU-Trees4F_ens-sdms.zip**
 2. Extract and copy to `Species_Data/` folder
 
 **Option B: Download individual species** (recommended for selective use)
@@ -156,7 +156,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**Author:** Marijana Andabaka  
-**Website:** [andalytics.com](https://andalytics.com/en/){target="_blank"}  
+**Author:** Marijana Andabaka
+**Website:** [andalytics.com](https://andalytics.com/en/){target="_blank"}
 **Email:** [marijana@andalytics.com](mailto:marijana@andalytics.com)
 **LinkedIn**: [marijana-andabaka](https://www.linkedin.com/in/marijana-andabaka/){target="_blank"}
