@@ -24,8 +24,8 @@ This application provides an interactive platform for exploring climate suitabil
 
 This application is based on the EU-Trees4F dataset from the European Commission's Joint Research Centre (JRC):
 
-- **Dataset web page**: [EU-Trees4F - European forest tree distribution under future climate scenarios](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/){target="_blank"}
-- **Citation**: Mauri A., Girardello M., Strona G., Beck P. S. A., Forzieri G., Caudullo G., Manca F. & Cescatti A., 2022. EU-Trees4F, a dataset on the future distribution of European tree species. Scientific Data 9, 37. DOI: [10.1038/s41597-022-01128-5](https://doi.org/10.1038/s41597-022-01128-5){target="_blank"}
+- **Dataset web page**: [EU-Trees4F - European forest tree distribution under future climate scenarios](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/)
+- **Citation**: Mauri A., Girardello M., Strona G., Beck P. S. A., Forzieri G., Caudullo G., Manca F. & Cescatti A., 2022. EU-Trees4F, a dataset on the future distribution of European tree species. Scientific Data 9, 37. DOI: [10.1038/s41597-022-01128-5](https://doi.org/10.1038/s41597-022-01128-5)
 
 ## Getting Started
 
@@ -164,7 +164,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 <br>
 
-**Need Advanced Forest Data Science?**
+*Need Advanced Forest Data Science?*
 
 *I help research organizations transform their data workflows from manual to automated, providing comprehensive services from statistical analysis and modeling to spatial data integration and advanced visualizations. If you're spending days on data collection and processing instead of focusing on analysis and insights, let's talk about how custom R solutions can streamline your research pipeline.*
 
@@ -179,5 +179,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 *Contact me*
 
 *Website: [andalytics.com](https://andalytics.com/en/)*
+
 *Email: [marijana@andalytics.com](mailto:marijana@andalytics.com)*
+
 *LinkedIn: [marijana-andabaka](https://www.linkedin.com/in/marijana-andabaka/)*
