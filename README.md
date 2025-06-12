@@ -54,16 +54,16 @@ install.packages(c(
 
 **Download Options:**
 
-- **Complete Dataset** (~2 GB) - All layers: [EU-Trees4F_dataset.zip](link)
-- **SDM Ensemble Mean** (~130 MB) - **Recommended**: [EU-Trees4F_ens-sdms.zip](link)
-- **Climatic Ensemble** (~70 MB): [EU-Trees4F_ens-clim.zip](link)
-- **Single Models** (~1.2 GB): [EU-Trees4F_single-models.zip](link)
-- **PNG Images** (~500 MB): [EU-Trees4F_pngs.zip](link)
-- **Individual Species**: Available as separate downloads for each of the 67 species from the [JRC dataset page](https://data.jrc.ec.europa.eu/dataset/b2199de2-2fd8-44aa-9910-2ee9daa5ce93){target="_blank"}
+- **Complete Dataset** (~2 GB) - All layers: [EU-Trees4F_dataset.zip](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/)
+- **SDM Ensemble Mean** (~130 MB) - **Recommended**: [EU-Trees4F_ens-sdms.zip](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/)
+- **Climatic Ensemble** (~70 MB): [EU-Trees4F_ens-clim.zip](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/)
+- **Single Models** (~1.2 GB): [EU-Trees4F_single-models.zip](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/)
+- **PNG Images** (~500 MB): [EU-Trees4F_pngs.zip](https://forest.jrc.ec.europa.eu/en/activities/forests-and-climate-change/)
+- **Individual Species**: Available as separate downloads for each of the 67 species from the [JRC dataset page](https://data.jrc.ec.europa.eu/dataset/b2199de2-2fd8-44aa-9910-2ee9daa5ce93)
 
 ### Alternative Download Sources
 
-- **Figshare**: [Complete dataset](https://figshare.com/articles/dataset/EU-Trees4F_dataset_on_the_future_distribution_of_European_tree_species/14620439){target="_blank"}
+- **Figshare**: [Complete dataset](https://springernature.figshare.com/collections/EU-Trees4F_A_dataset_on_the_future_distribution_of_European_tree_species_/5525688)
 
 
 ### Data Setup Instructions
@@ -73,7 +73,7 @@ install.packages(c(
 2. Extract and copy to `Species_Data/` folder
 
 **Option B: Download individual species** (recommended for selective use)
-1. **Visit** the [EU-Trees4F dataset page](https://data.jrc.ec.europa.eu/dataset/b2199de2-2fd8-44aa-9910-2ee9daa5ce93){target="_blank"}
+1. **Visit** the [EU-Trees4F dataset page](https://data.jrc.ec.europa.eu/dataset/b2199de2-2fd8-44aa-9910-2ee9daa5ce93)
 2. **Scroll down** to "Layers by species" section
 3. **Download SDM ensemble** zip files for each species you need
 4. **Extract** each zip file
@@ -81,6 +81,7 @@ install.packages(c(
 6. **Copy** the extracted species folders following this structure:
 
 
+```
 Species_Data/
 ├── EU-Trees4F_Fagus_sylvatica/
 │   └── ens_sdms/
@@ -89,6 +90,7 @@ Species_Data/
 │       └── ...
 ├── EU-Trees4F_Quercus_robur/
 └── ...
+```
 
 ### Supported Species in This Application
 
@@ -110,10 +112,10 @@ The complete EU-Trees4F dataset includes 67 species. This application can be eas
 
 ```{r}
 # Clone the repository
-git clone https://github.com/andabaka/EU-Trees4F-App.git
+git clone https://github.com/andabaka/EU-Trees4F-app.git
 
 # Navigate to the project directory
-setwd("EU-Trees4F-App")
+setwd("EU-Trees4F-app")
 
 # Run the application
 shiny::runApp()
@@ -154,9 +156,28 @@ Visit the live application: [EU-Trees4F Interactive App](https://mandabaka.shiny
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
----
+<br>
 
 **Author:** Marijana Andabaka
-**Website:** [andalytics.com](https://andalytics.com/en/){target="_blank"}
-**Email:** [marijana@andalytics.com](mailto:marijana@andalytics.com)
-**LinkedIn**: [marijana-andabaka](https://www.linkedin.com/in/marijana-andabaka/){target="_blank"}
+
+---
+
+<br>
+
+**Need Advanced Forest Data Science?**
+
+*I help research organizations transform their data workflows from manual to automated, providing comprehensive services from statistical analysis and modeling to spatial data integration and advanced visualizations. If you're spending days on data collection and processing instead of focusing on analysis and insights, let's talk about how custom R solutions can streamline your research pipeline.*
+
+*My clients typically see:*
+
+* *90% reduction in data processing time*
+* *Improved accuracy through automated workflows*
+* *Rigorous statistical insights that strengthen research conclusions*
+* *Reproducible analyses that scale across projects*
+
+
+*Contact me*
+
+*Website: [andalytics.com](https://andalytics.com/en/)*
+*Email: [marijana@andalytics.com](mailto:marijana@andalytics.com)*
+*LinkedIn: [marijana-andabaka](https://www.linkedin.com/in/marijana-andabaka/)*
