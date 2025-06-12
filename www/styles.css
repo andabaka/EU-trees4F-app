@@ -1,0 +1,890 @@
+/* EU-Trees4F Interactive Viewer - Optimized Styling */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* Base layout */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Apply Quicksand font */
+body, p, div, span, h1, h2, h3, h4, h5, h6,
+label, input, select, textarea, button:not(.fas):not(.far):not(.fab):not(.fa),
+.control-group, .stats-panel, .title, .data-source-panel {
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+/* Preserve Font Awesome fonts */
+.fas, .far, .fab, .fa,
+i[class*="fa-"],
+[class*="fa-"]::before {
+    font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    display: inline-block !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.fab { font-family: 'Font Awesome 6 Brands' !important; font-weight: 400 !important; }
+.far { font-weight: 400 !important; }
+
+
+
+/* Full screen map  */
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto !important;
+    overflow: hidden !important;
+}
+
+/* Leaflet container fixes */
+.leaflet-container {
+    pointer-events: auto !important;
+    cursor: grab;
+    /* For touch events */
+    -ms-touch-action: pinch-zoom;
+    touch-action: pinch-zoom;
+}
+
+.leaflet-container:active {
+    cursor: grabbing;
+}
+
+/* Ensure scroll events are not blocked */
+.leaflet-zoom-animated {
+    pointer-events: auto !important;
+}
+
+/* Leaflet controls */
+.leaflet-control-container {
+    pointer-events: auto !important;
+}
+
+.leaflet-control {
+    pointer-events: auto !important;
+}
+
+/* Ensure popups work */
+.leaflet-popup {
+    pointer-events: auto !important;
+}
+
+.leaflet-popup-content-wrapper {
+    pointer-events: auto !important;
+}
+
+/* Central species title */
+.central-species-title {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 502;
+    pointer-events: none;
+
+    background: transparent;
+    color: #414a37;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 28px !important;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    letter-spacing: 0.8px;
+}
+
+/* Content wrapper for scroll functionality */
+.content-wrapper {
+    position: relative;
+    z-index: 500;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* Main container for top elements */
+.top-container {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    z-index: 500;
+    display: flex;
+    gap: 15px;
+    pointer-events: none;
+}
+
+/* Control panel - FIXES */
+.controls-panel {
+    width: 300px;
+    pointer-events: auto !important;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px !important;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.3) !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    z-index: 501;
+    overscroll-behavior: contain;
+    height: 500px !important;
+    max-height: 500px !important;
+    min-height: 500px !important;
+}
+
+/* Tree image panel - FIXES */
+.tree-image-panel {
+    pointer-events: auto !important;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.3) !important;
+    width: 300px;
+    height: 500px !important;
+    display: flex;
+    flex-direction: column;
+    z-index: 501;
+    overscroll-behavior: contain;
+}
+
+/* Full image container */
+.image-container-full {
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    background-color: #f8f9fa;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Full-size tree image */
+.tree-species-image-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: grab;
+    transition: all 0.3s ease;
+    transform-origin: center center;
+    user-select: none;
+    -webkit-user-drag: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tree-species-image-full:active { cursor: grabbing; }
+
+/* Full-size placeholder */
+.tree-placeholder-full {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #ccc;
+    cursor: not-allowed;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Image controls overlay */
+.image-controls-overlay {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 6px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+/* Small control buttons */
+.control-btn-small {
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #414a37 !important;
+    font-size: 10px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2) !important;
+}
+
+.control-btn-small:hover {
+    background-color: white !important;
+    transform: translateY(-2px) scale(1.1) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+.control-btn-small:active {
+    transform: translateY(0) scale(1) !important;
+}
+
+/* Control groups */
+.control-group {
+    margin-bottom: 10px !important;
+    width: 100%;
+}
+
+/* Last control group (with reset button) */
+.control-group:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Title styling */
+.title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #414a37;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #414a37;
+}
+
+/* Statistics panel  */
+.stats-panel {
+    position: absolute !important;
+    top: 620px !important;
+    left: 10px !important;
+    width: 300px !important;
+    z-index: 500 !important;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 0 70px rgba(0, 0, 0, 0.3) !important;
+    max-height: 350px;
+    overflow-y: auto;
+    pointer-events: auto !important;
+    overscroll-behavior: contain;
+}
+
+.stats-panel h4 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #414a37;
+    font-weight: 600;
+    color: #414a37;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Risk level styling */
+.risk-low { color: #414a37; font-weight: 600; }
+.risk-moderate { color: #de8a34; font-weight: 600; }
+.risk-high { color: #c8743a; font-weight: 600; }
+.risk-critical { color: #b85d40; font-weight: 600; }
+
+/* Country popup styling */
+.leaflet-popup-content {
+    width: 250px !important;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+.country-info {
+    font-size: 12px;
+}
+
+.country-info h4 {
+    font-weight: 600;
+}
+
+.country-info table {
+    width: 100%;
+}
+
+.country-info th, .country-info td {
+    padding: 2px 4px;
+    text-align: left;
+}
+
+/* Layer control styling */
+.leaflet-control-layers {
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+.leaflet-control-layers-base label,
+.leaflet-control-layers-overlays label {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 400;
+}
+
+/* Button styling */
+.btn-group {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.btn-group .btn {
+    flex: 1;
+    border-radius: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+/* Active button state */
+.btn-group .btn.active {
+    background-color: #414a37 !important;
+    border-color: #414a37 !important;
+    color: white !important;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(65, 74, 55, 0.3);
+}
+
+.btn-group .btn:hover:not(.active) {
+    background-color: #ecf0f1;
+    transform: translateY(-1px);
+}
+
+/* Disabled controls */
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Reset button */
+.reset-btn {
+    width: 100% !important;
+    height: 38px !important;
+    padding: 8px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    border-radius: 8px !important;
+    margin: 8px 0 0 0 !important;
+    transition: all 0.3s ease;
+    background-color: #414a37 !important;
+    border-color: #414a37 !important;
+    color: white !important;
+}
+
+.reset-btn:hover {
+    background-color: #556b4a !important;
+    border-color: #556b4a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(65, 74, 55, 0.3);
+}
+
+/* Time period label */
+#time_period_label {
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+    color: #414a37 !important;
+    font-size: 13px;
+    font-style: italic;
+    background-color: rgba(127, 140, 141, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Input elements */
+.control-group label {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 14px;
+}
+
+.control-group .form-control {
+    border-radius: 25px !important;
+    border: 1px solid #bdc3c7;
+    padding: 6px 15px;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control-group .form-control:focus {
+    border-color: #414a37;
+    box-shadow: 0 0 0 2px rgba(65, 74, 55, 0.2);
+    outline: none;
+}
+
+/* Selectize input styling */
+.selectize-input {
+    border-radius: 10px !important;
+    padding: 6px 15px !important;
+    border: 1px solid #bdc3c7 !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.selectize-input.focus {
+    border-color: #414a37 !important;
+    box-shadow: 0 0 0 2px rgba(65, 74, 55, 0.2) !important;
+}
+
+.selectize-dropdown {
+    border-radius: 10px !important;
+    border: 1px solid #414a37 !important;
+}
+
+/* Selectize dropdown selected item styling */
+.selectize-dropdown .option.active {
+    background-color: #414a37 !important;
+    color: white !important;
+}
+
+.selectize-dropdown .option:hover {
+    background-color: rgba(65, 74, 55, 0.1) !important;
+    color: #414a37 !important;
+}
+
+.selectize-dropdown .selected {
+    background-color: #414a37 !important;
+    color: #fff !important;
+}
+
+/* Slider styling */
+.control-group .irs {
+    margin-bottom: 8px;
+}
+
+/* Hide slider min/max numbers and tooltip */
+.irs--shiny .irs-min,
+.irs--shiny .irs-max,
+.irs--shiny .irs-single {
+    display: none !important;
+}
+
+/* Hide grid lines but keep numbers */
+.irs--shiny .irs-grid-pol {
+    display: none !important;
+}
+
+.irs--shiny .irs-grid-text {
+    display: block !important;
+}
+
+/* Slider line styling */
+.irs--shiny .irs-line {
+    background: #ddd !important;
+    border: none !important;
+    height: 6px !important;
+    border-radius: 3px !important;
+}
+
+/* Remove colored bar */
+.irs--shiny .irs-bar {
+    background: transparent !important;
+    border: none !important;
+    height: 6px !important;
+}
+
+/* Handle styling */
+.irs--shiny .irs-handle {
+    background: #414a37 !important;
+    border: 2px solid #414a37 !important;
+    border-radius: 50% !important;
+    width: 18px !important;
+    height: 18px !important;
+    top: 22px !important;
+}
+
+.irs--shiny .irs-handle:hover {
+    background: #556b4a !important;
+    border-color: #556b4a !important;
+}
+
+/* Ensure Quicksand font in Shiny inputs */
+.selectize-input,
+.selectize-dropdown {
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+.irs-grid-text {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 400;
+}
+
+/* Data source panel - RESPONSIVE WITH TEXT WRAPPING */
+.data-source-panel {
+    position: fixed !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+    max-width: 90% !important;
+    z-index: 501 !important;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+    color: #414a37;
+    pointer-events: auto; /* Added */
+}
+
+/* Mobile data source - enable text wrapping */
+@media (max-width: 767px) {
+    .data-source-panel {
+        white-space: normal !important;
+        text-align: left !important;
+        max-width: calc(100vw - 20px) !important;
+        width: auto !important;
+    }
+
+    .data-source-content {
+        display: block;
+        line-height: 1.4;
+    }
+
+    /* Add spacing between links */
+    .data-source-content span {
+        display: inline-block;
+        margin-right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-source-panel {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+
+.data-source-content {
+    display: inline;
+}
+
+.source-link,
+.author-link {
+    color: #414a37 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.source-link:hover,
+.author-link:hover {
+    color: #556b4a !important;
+    text-decoration: underline !important;
+}
+
+.github-link,
+.email-link {
+    color: #414a37 !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.github-link:hover,
+.email-link:hover {
+    color: #556b4a !important;
+    text-decoration: none !important;
+}
+
+.github-link i,
+.email-link i {
+    font-size: 14px;
+    margin-left: 3px;
+    color: #414a37 !important;
+}
+
+.email-link i {
+    font-size: 12px;
+}
+
+/* Info icon styling */
+.info-icon {
+    font-size: 12px !important;
+    color: #7f8c8d !important;
+    margin-left: 4px !important;
+    cursor: help !important;
+    transition: color 0.2s ease !important;
+    opacity: 0.7;
+}
+
+.info-icon:hover {
+    color: #414a37 !important;
+    opacity: 1;
+}
+
+/* Tooltip styling */
+.title {
+    position: relative;
+}
+
+.title span {
+    position: relative;
+}
+
+.title span:hover::after {
+    content: "EU-Trees4F dataset maps current and future potential distribution of European tree species based on climate and soil suitability. The complete dataset covers 67 tree species, while this interactive application focuses on 7 major species across Europe. Explore projections for current conditions (1991-2020) and three future periods (2021-2050, 2051-2080, 2081-2110) under RCP 4.5 and RCP 8.5 climate scenarios. Click on countries for detailed statistics, use the time slider to access climate scenarios, and interact with species distribution maps and images.";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1005;
+    background: white;
+    color: #414a37;
+    border: 2px solid #414a37;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    width: 320px; /* Increased for longer text */
+    max-width: 90vw;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    animation: tooltipFadeIn 0.3s ease forwards;
+}
+
+.title span:hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1006;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #414a37;
+    margin-top: -2px;
+    opacity: 0;
+    animation: tooltipFadeIn 0.3s ease forwards;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Loading animation for tree images */
+.tree-image-loading {
+    width: 160px;
+    height: 120px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 12px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ADDITIONAL FIXES FOR TOUCH DEVICES */
+@media (pointer: coarse) {
+    .leaflet-container {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+}
+
+/* For mobile touch events */
+.leaflet-touch .leaflet-container {
+    -ms-touch-action: pinch-zoom;
+    touch-action: pinch-zoom;
+}
+
+/* ==================== RESPONSIVE ADDITIONS ==================== */
+
+/* Mobile title positioning - left */
+@media (max-width: 767px) {
+    .central-species-title {
+        left: 10px;
+        transform: none;
+        text-align: left;
+        max-width: calc(100vw - 20px);
+        font-size: clamp(16px, 5vw, 22px);
+        top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .central-species-title {
+        font-size: clamp(14px, 4.5vw, 18px);
+        letter-spacing: 0.4px;
+        left: 10px;
+        text-align: left;
+    }
+}
+
+/* MOBILE LAYOUT (up to 767px)  */
+@media (max-width: 767px) {
+    .top-container {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px;
+        left: 10px !important;
+        transform: none !important;
+        width: auto;
+        max-width: calc(100vw - 20px);
+        top: clamp(90px, 15vh, 130px);
+    }
+
+    .controls-panel,
+    .tree-image-panel {
+        width: 300px !important;
+        min-width: 300px;
+        max-width: 300px;
+        margin-left: 0 !important;
+    }
+}
+
+/* EXTRA SMALL MOBILE (up to 480px) */
+@media (max-width: 480px) {
+    .top-container {
+        top: clamp(80px, 12vh, 110px);
+        gap: 12px;
+        left: 10px !important;
+        align-items: flex-start !important;
+    }
+
+    .controls-panel,
+    .tree-image-panel {
+        width: 280px !important;
+        min-width: 280px;
+        max-width: 280px;
+        margin: 0;
+        margin-left: 0 !important;
+    }
+}
+
+/* Mobile stats positioning  */
+@media (max-width: 767px) {
+    .stats-panel {
+        /* Position below top-container on left side  */
+        top: calc(clamp(90px, 15vh, 130px) + clamp(920px, 140vh, 1150px)) !important;
+        left: 10px !important; /* Fixed left */
+        transform: none !important;
+        width: 300px !important;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-panel {
+        top: calc(clamp(80px, 12vh, 110px) + clamp(820px, 120vh, 1020px)) !important;
+        left: 10px !important;
+        width: 280px !important;
+        max-width: 280px;
+        padding: 12px;
+    }
+}
+
+/* LANDSCAPE ORIENTATION ON MOBILE - also left */
+@media (max-width: 767px) and (orientation: landscape) {
+    .central-species-title {
+        top: 5px;
+        left: 10px;
+        text-align: left;
+        font-size: clamp(14px, 3vw, 18px);
+    }
+
+    .top-container {
+        top: 50px;
+        left: 10px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+
+    .controls-panel,
+    .tree-image-panel {
+        width: 300px !important;
+        height: clamp(250px, 50vh, 350px);
+    }
+
+    .stats-panel {
+        top: calc(60px + 700px) !important; /* Pushed down */
+        left: 10px !important;
+        width: 300px !important;
+    }
+}
+
+/* Change the color of checked/active layer controls to green */
+.leaflet-control-layers input[type="radio"]:checked + span,
+.leaflet-control-layers input[type="checkbox"]:checked + span {
+    color: #414a37 !important;
+    font-weight: 600;
+}
+
+/* Style the radio button/checkbox itself when checked */
+.leaflet-control-layers input[type="radio"]:checked,
+.leaflet-control-layers input[type="checkbox"]:checked {
+    accent-color: #414a37;
+}
+

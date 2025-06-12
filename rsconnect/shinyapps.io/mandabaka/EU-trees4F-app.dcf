@@ -1,0 +1,12 @@
+name: EU-trees4F-app
+title: EU-trees4F-app
+username: mandabaka
+account: mandabaka
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 14922681
+bundleId: 10441021
+url: https://mandabaka.shinyapps.io/EU-trees4F-app/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
