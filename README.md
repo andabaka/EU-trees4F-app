@@ -150,7 +150,7 @@ shiny::runApp()
 
 ## Live Demo
 
-Visit the live application: [EU-Trees4F Interactive App](https://mandabaka.shinyapps.io/EU-trees4F-app/){target="_blank"}
+Visit the live application: [EU-Trees4F Interactive App](https://mandabaka.shinyapps.io/EU-trees4F-app/)
 
 ## License
 
