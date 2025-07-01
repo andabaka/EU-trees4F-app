@@ -123,7 +123,7 @@ ui <- bootstrapPage(
                    href = "https://free3d.com/",
                    target = "_blank", class = "source-link"),
             tags$span(" | Source Code: "),
-            tags$a(href = "https://github.com/YourUsername/repository-name",
+            tags$a(href = "https://github.com/andabaka/EU-trees4F-app",
                    icon("github"), target = "_blank", class = "github-link"),
             tags$span(" | Author: "),
             tags$a("Marijana Andabaka",
@@ -218,7 +218,7 @@ ui <- bootstrapPage(
 # Server logic
 server <- function(input, output, session) {
 
-    # Species images mapping - update with your actual image names
+    # Species images mapping
     species_images <- list(
         "Fagus_sylvatica" = "fagus-sylvatica.jpg",
         "Quercus_robur" = "pedunculate_oak.jpg",
@@ -229,12 +229,12 @@ server <- function(input, output, session) {
         "Fraxinus_excelsior" = "common-ash.jpg"
     )
 
-    # Update central species title dynamically - uses correct format
+    # Update central species title dynamically
     output$central_species_title <- renderText({
         species <- input$species
         species_index <- which(SPECIES_LIST == species)
         if (length(species_index) > 0) {
-            # Use display names which are already in "Latin (Common)" format
+            # Use display names
             display_name <- SPECIES_DISPLAY_NAMES[species_index]
             return(display_name)
         } else {
@@ -316,7 +316,7 @@ server <- function(input, output, session) {
 
     # Reset button functionality
     observeEvent(input$reset_map, {
-        updateSelectInput(session, "species", selected = "Fagus_sylvatica")
+        updateSelectInput(session, "species", selected = "Abies_alba")
         updateSliderInput(session, "time_period", value = 1)
 
         runjs("
@@ -350,7 +350,7 @@ server <- function(input, output, session) {
         # Load countries
         countries <- load_europe_countries()
 
-        # Add countries with popup statistics (these go on top as interactive elements)
+        # Add countries with popup statistics
         if(!is.null(countries) && !is.null(current_raster)) {
             if(time_period == "current") {
                 # For current period, pass current raster only
